@@ -4,52 +4,62 @@
         <img class="l_arrow" src="../../assets/game3/left.png" alt="?"><br>
         <img class="dl_arrow" src="../../assets/game3/down_click.png" alt="?">
     </div>
-    
+
     <div id="right">
         <img class="r_arrow" src="../../assets/game3/right.png" alt="?"><br>
         <img class="dr_arrow" src="../../assets/game3/down_click.png" alt="?">
     </div>
     <div id="top"></div>
     <div id="bottom"></div>
-    
+
     <div class="gif_parts">
         <img [hidden]="this.congrats_hide" class="congrats" src="../../assets/game3/congrats.gif" alt="?">
-        <h2 [hidden]="this.congrats_hide" style="color: rgba(31, 153, 0, 0.753);" class="congrats">NEW HIGHSCORE!</h2>   
+        <h2 [hidden]="this.congrats_hide" style="color: rgba(31, 153, 0, 0.753);" class="congrats">NEW HIGHSCORE!</h2>
         <br>
-        <img class="clap" [hidden]="this.clap_hide" style="{{'position: absolute;  left:'+ this.clap_left +'px; top:'+this.clap_top +'px;'}}" src="{{ correct_stacked[cur_correct_stacked] }}" alt="?">
-        <h1 [hidden]="this.clap_hide" style="{{'position: absolute;  left:'+ this.clap_left +'px; top:'+this.clap_top +'px; color: green; font-weight: 100px;'}}">+10</h1>
-        
+        <img class="clap" [hidden]="this.clap_hide"
+            style="{{'position: absolute;  left:'+ this.clap_left +'px; top:'+this.clap_top +'px;'}}"
+            src="{{ correct_stacked[cur_correct_stacked] }}" alt="?">
+        <h1 [hidden]="this.clap_hide"
+            style="{{'position: absolute;  left:'+ this.clap_left +'px; top:'+this.clap_top +'px; color: green; font-weight: 100px;'}}">
+            +10</h1>
+
         <br>
-        <img [hidden]="this.no_hide" style="{{'position: absolute;  left:'+ this.no_left +'px; top:'+ this.no_top +'px;'}}" src="{{ incorrect_stacked[cur_incorrect_stacked] }}" alt="?"><br>
+        <img [hidden]="this.no_hide"
+            style="{{'position: absolute;  left:'+ this.no_left +'px; top:'+ this.no_top +'px;'}}"
+            src="{{ incorrect_stacked[cur_incorrect_stacked] }}" alt="?"><br>
     </div>
- 
-    
-    
-    <div style="display:none;text-align:center;" class="modal" id="myModal" >
+
+
+
+    <div style="display:none;text-align:center;" class="modal" id="myModal">
 
         <!-- Modal content -->
         <div class="modal-content">
-          <span (click)="closeModal()"  class="close">&times;</span>
-          <p><img src="../../assets/game3/help.gif" /></p>
+            <span (click)="closeModal()" class="close">&times;</span>
+            <p><img src="../../assets/game3/help.gif" /></p>
         </div>
-      
-      </div>
-    
+
+    </div>
+
     <div class="center_part">
         <h1 [hidden]="game_over" style="color: red; ">GAME OVER!</h1>
         <h2 [hidden]="game_over" style="color: brown;">TRY AGAIN?</h2>
         <img class="restart" [hidden]="game_over" (click)="reloadPage()" src="../../assets/game3/reload.png" alt="?">
         <h3 [hidden]="level_completed" style="color: rgb(36, 163, 36);">LEVEL {{this.level}} COMPLETED!</h3>
         <img class="next_level_icon" [hidden]="level_completed" src="../../assets/game3/next_level_icon.png" alt="?">
-        <img class="next_level_button" [hidden]="level_completed" (click)="nextLevel()" src="../../assets/game3/next_level_button.png" alt="?"><br>
+        <img class="next_level_button" [hidden]="level_completed" (click)="nextLevel()"
+            src="../../assets/game3/next_level_button.png" alt="?"><br>
     </div>
-
-    <button mdbBtn type="button" style="float: left; margin-top: 3%; margin-left: 2%;" color="primary" [outline]='true' mdbWavesEffect><a routerLink="/app-homepage"> < BACK </a></button>
+    <a routerLink="/app-homepage">
+        <button mdbBtn type="button" style="float: left; margin-top: 3%; margin-left: 2%;" color="primary"
+            [outline]='true' mdbWavesEffect>
+            < BACK </button>
+    </a>
     <!-- Top elements -->
-    <div  class="top_items">
+    <div class="top_items">
         <h3 class="score">
-            Level:{{this.level}} <br> 
-            Score: {{this.score | number: '1.0-0'}}<br> 
+            Level:{{this.level}} <br>
+            Score: {{this.score | number: '1.0-0'}}<br>
             <!-- DIF = {{this.dif}}<br> 
             last_dif = {{this.last_dif}}<br>
             base_x = {{this.baseBrick_x}}<br>
@@ -58,24 +68,29 @@
             <!-- page_x = {{this.page_x}}<br>
             page_y = {{this.page_y}}<br>
             page_w = {{this.page_w}}<br> -->
-        </h3> 
+        </h3>
         <div class='eye left'><span class="eye-iris"></span></div>
         <img id="arrow" src="{{top_items[0]}}" height="100">
         <div class='eye right'><span class="eye-iris"></span></div>
         <div class="highScore">
-            <h3 >Level Highscore: {{this.highScore | number: '1.0-0'}}</h3> 
-            <button mdbBtn type="button" (click)="reloadPage()" color="primary" [outline]=true mdbWavesEffect>Restart</button>
-            <button mdbBtn type="button" (click)="resetGame()" color="primary" [outline]=true mdbWavesEffect>Reset Game</button>
+            <h3>Level Highscore: {{this.highScore | number: '1.0-0'}}</h3>
+            <button mdbBtn type="button" (click)="reloadPage()" color="primary" [outline]=true
+                mdbWavesEffect>Restart</button>
+            <button mdbBtn type="button" (click)="resetGame()" color="primary" [outline]=true mdbWavesEffect>Reset
+                Game</button>
         </div>
         <div class="col-sm">
-            <button mdbBtn type="button"  (click)="openHelp()" color="primary" [outline]=true mdbWavesEffect>HELP</button>
+            <button mdbBtn type="button" (click)="openHelp()" color="primary" [outline]=true
+                mdbWavesEffect>HELP</button>
         </div>
         <br>
-        <div *ngFor="let index of bricksList" >
-            <img class="{{'brick'+index}}" style="{{'margin-top: '+(-7-(index*3))+'%; position: absolute;'}}" src="{{top_items[1]}}" height="100">
-        <br>
-        <div>
-    </div>
-    <img class="bottom_brick" style="{{'position:fixed; bottom:0.4%; right:'+this.baseBrickPadding+'%;'}}" src="{{top_items[1]}}" height="100">
+        <div *ngFor="let index of bricksList">
+            <img class="{{'brick'+index}}" style="{{'margin-top: '+(-7-(index*3))+'%; position: absolute;'}}"
+                src="{{top_items[1]}}" height="100">
+            <br>
+            <div>
+            </div>
+            <img class="bottom_brick" style="{{'position:fixed; bottom:0.4%; right:'+this.baseBrickPadding+'%;'}}"
+                src="{{top_items[1]}}" height="100">
 
-</div>
+        </div>

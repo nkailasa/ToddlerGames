@@ -3,11 +3,12 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <div class="inner">
-    <a href="/app-homepage" class="previous">< Back</a>
-    <button style="position: absolute;right: 20px;top: 20px;" type="button" class="btn btn-primary" onClick="window.location.reload();">Reset</button>
+  <a href="/app-homepage"><button mdbBtn type="button" color="primary" [outline]=true mdbWavesEffect>
+    < Back</button></a>
+    <button mdbBtn style="position: absolute;right: 20px;top: 20px;" type="button" class="btn btn-primary" onClick="window.location.reload();">Reset</button>
 
       <button mdbBtn type="button" (click)="openHelp()" color="primary" [outline]=true mdbWavesEffect>HELP</button>
-      <h4 style="text-align:center">Level: {{this.lvl}}</h4>
+      <h3 style="text-align:center">Level: {{this.lvl}}</h3>
   </div>
 
 
@@ -32,7 +33,7 @@
 <div class="score-div">
   <div id="score" style="float:right;"><h1><b>Score:0/100</b></h1></div>
   <div id="wrong" style="display:none;text-align:center;"><h2 style="color:red;"><b>WRONG!</b></h2></div>
-  <div id="win" style="display:none;text-align:center;"><h2 style="color:green;"><b>You Win!</b></h2></div>
+  <div id="win" style="display:none;text-align:center;"><h2 style="color:green;"><b>You Win!<img class="congrats" src="../../assets/game1/congrats.gif" alt="?"></b></h2></div>
 </div>
 
 

@@ -1,1 +1,28 @@
-<p>register works!</p>
+
+<div class="sidenav">
+    <div class="login-main-text">
+       <h2>Application<br> Registration Page</h2>
+       <p>Register from here to access.</p>
+    </div>
+ </div>
+ <div class="main">
+    <div class="col-md-6 col-sm-12">
+       <div class="login-form">
+          <form>
+             <div class="form-group">
+                <label>Player Name</label>
+                <input id="username" type="text" class="form-control" placeholder="Player Name" required>
+                <label>E-mail</label>
+                <input id="email" type="email" class="form-control" placeholder="Email" required>
+             </div>
+             <div class="form-group">
+                <label>Password</label>
+                <input id="password1" type="password" class="form-control" placeholder="Password" required><br>
+                <input id="password2" type="password" class="form-control" placeholder="Confirm Password" required>
+             </div>
+             <button (click)="register()" class="btn btn-black">Register</button><br>
+             <a routerLink=''>Already have an account?</a>
+          </form>
+       </div>
+    </div>
+ </div>

@@ -11,11 +11,15 @@ export class Game2Component implements OnInit {
   hardWords: string[];
   score: number = 0;
   level: string | null;
+  gamelost: boolean;
+  gamewon: boolean;
   constructor(private localStorage: LocalStorageService) {
     this.easyLetters = ["A", "B", "N", "K", "S"];
     this.mediumWords = ["AN", "BE", "NO", "SO", "OK"];
     this.hardWords = ["DAD", "SKY", "NOT", "KID", "MOM", "ANT"];
     this.level = "1";
+    this.gamewon = false;
+    this.gamelost = false;
   }
 
   A = "../../assets/game2/easy/A.png";
@@ -74,25 +78,32 @@ export class Game2Component implements OnInit {
     }
     if (this.score == 100) {
       document.getElementById("win")!.style.display = "";
+      this.gamewon = true;
+      this.gamelost = false;
     } else {
       var typedLetter = event.target.value.toUpperCase();
       console.log(typedLetter);
-      // event.target.value = '';
       console.log(this.level);
       if (this.level == "1") {
         var idx = this.easyLetters.indexOf(typedLetter);
         if (idx == -1) {
           document.getElementById("wrong")!.style.display = "";
+          this.gamewon = false;
+          this.gamelost = true;
         }
         else {
           this.easyLetters.splice(idx, 1);
           this.score += 20;
-          if (this.score == 100)
+          if (this.score == 100) {
             document.getElementById("win")!.style.display = "";
+            this.gamewon = true;
+            this.gamelost = false;
+          }
           localStorage.setItem("game2EasyScore", this.score.toString());
           event.target.value = '';
           console.log(this.score);
           document.getElementById("wrong")!.style.display = "none";
+          this.gamelost = false;
           if (typedLetter == "A")
             this.A = this.pop;
           if (typedLetter == "B")
@@ -110,18 +121,25 @@ export class Game2Component implements OnInit {
         var midx = this.mediumWords.indexOf(typedLetter);
         if (typedLetter.length < 2) {
           document.getElementById("typemore")!.style.display = "";
+          this.gamelost = false;
+          this.gamewon = false;
         }
         else if (midx == -1) {
           document.getElementById("again")!.style.display = "";
           document.getElementById("typemore")!.style.display = "none";
+          this.gamelost = true;
+          this.gamewon = false;
         }
         else {
           this.mediumWords.splice(midx, 1);
           this.score += 20;
-          if (this.score == 100)
+          if (this.score == 100) {
             document.getElementById("win")!.style.display = "";
+            this.gamewon = true;
+          }
           localStorage.setItem("game2MedScore", this.score.toString());
           event.target.value = '';
+          this.gamelost = false;
           document.getElementById("again")!.style.display = "none";
           document.getElementById("typemore")!.style.display = "none";
           if (typedLetter == "AN")
@@ -140,17 +158,24 @@ export class Game2Component implements OnInit {
         var hidx = this.hardWords.indexOf(typedLetter);
         if (typedLetter.length < 3) {
           document.getElementById("typemore")!.style.display = "";
+          this.gamelost = false;
+          this.gamewon = false;
         }
         else if (hidx == -1) {
           document.getElementById("again")!.style.display = "";
           document.getElementById("typemore")!.style.display = "none";
+          this.gamelost = true;
+          this.gamewon = false;
         }
         else {
           this.hardWords.splice(hidx, 1);
           this.score += 20;
-          if (this.score == 100)
+          this.gamelost = false;
+          if (this.score == 100) {
             document.getElementById("win")!.style.display = "";
-            localStorage.setItem("game2HardScore", this.score.toString());
+            this.gamewon = true;
+          }
+          localStorage.setItem("game2HardScore", this.score.toString());
           event.target.value = '';
           document.getElementById("again")!.style.display = "none";
           document.getElementById("typemore")!.style.display = "none";

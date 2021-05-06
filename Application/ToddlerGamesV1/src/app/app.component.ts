@@ -7,7 +7,6 @@ import { SwUpdate } from '@angular/service-worker';
 })
 export class AppComponent {
   title = 'Toddler Games v0.1';
-  
 
   constructor(updates: SwUpdate){
     updates.available.subscribe(event=> {

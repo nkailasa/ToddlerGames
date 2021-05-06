@@ -1,88 +1,100 @@
-<div id="game">
-<div><br /><br />
-    <div class="container">
-        <div class="row">
-            <div class="col-sm">
-                <button mdbBtn type="button" color="primary" [outline]=true mdbWavesEffect><a href="/app-homepage">
-                        < Back</a></button>
-            </div>
-            <div class="col-sm">
-                <h3 id="score"><b>Level: {{this.level}}</b></h3></div>
-            <div class="col-md">
-                <h3 class="help">
-                   <div id="score"><b> 🎈 Score:{{score}}/100</b></div>
-                </h3>
-            </div>
-            <div class="col-sm">
-                <button mdbBtn type="button" (click)="openHelp()" color="primary" [outline]=true mdbWavesEffect>HELP</button>
-            </div>
-            
-            
-            <div style="display:none;text-align:center;" class="modal" id="myModal" >
-
-                <!-- Modal content -->
-                <div class="modal-content">
-                  <span (click)="closeModal()"  class="close">&times;</span>
-                  <p><img src="../../assets/game2/help.gif" /></p>
+<div  class="page" style="background-image: url(../../assets/game2/bg2.jpg);">
+    <div><br /><br />
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <a href="/app-homepage"><button mdbBtn type="button" color="primary" [outline]=true mdbWavesEffect>
+                            < Back</button></a>
                 </div>
-              
-              </div>
-
-            <div class="col-sm" style="align-content: right;">
-                <button mdbBtn type="button" color="default" [outline]=true mdbWavesEffect><a
-                        onClick="window.location.reload()" routerLink="app-homepage">Reset</a></button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div><br /><br />
-    <div class="container">
-        <div class="row">
-            <div class="col-sm">
-
-                <div [id]="position1"><img src={{A}} [position]='position1' />
+                <div class="col-sm">
+                    <h3 id="score"><b>Level: {{this.level}}</b></h3>
+                </div>
+                <div class="col-md">
+                    <h3 class="help">
+                        <div id="score"><b> 🎈 Score:{{score}}/100</b></div>
+                    </h3>
+                </div>
+                <div class="col-sm">
+                    <button mdbBtn type="button" (click)="openHelp()" color="primary" [outline]=true
+                        mdbWavesEffect>HELP</button>
                 </div>
 
-            </div>
-            <div class="col-sm" style="flex-grow: inherit;">
-                <div [id]="position2"><img src={{B}} [position]='position2' /></div>
+
+                <div style="display:none;text-align:center;" class="modal" id="myModal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span (click)="closeModal()" class="close">&times;</span>
+                        <p><img src="../../assets/game2/help.gif" /></p>
+                    </div>
+
+                </div>
+
+                <div class="col-sm" style="align-content: right;">
+                    <a onClick="window.location.reload()" routerLink="app-homepage">
+                        <button mdbBtn type="button" color="default" [outline]=true mdbWavesEffect>Reset</button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md"></div>
-        <div class="col-sm"><input #typeInput (keyup)="onKey($event)" class="inputtype" placeholder="Type on me..">
+    <div><br /><br />
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+
+                    <div [id]="position1"><img src={{A}} [position]='position1' />
+                    </div>
+
+                </div>
+                <div class="col-sm" style="flex-grow: inherit;">
+                    <div [id]="position2"><img src={{B}} [position]='position2' /></div>
+                </div>
+            </div>
         </div>
-        <div class="col-sm"></div>
     </div>
-    <h2 id="wrong" style="z-index:1;color:red;display:none;text-align:center;"><b>WRONG!</b></h2>
-    <h2 id="again" style="z-index:1;color:red;display:none;text-align:center;"><b>TRY AGAIN!</b></h2>
-    <h2 id="typemore" style="z-index:1;color:green;display:none;text-align:center;"><b>KEEP TYPING!</b></h2>
-    <h2 id="win" style="z-index:1;color:green;display:none;text-align:center;"><b>You Win!</b></h2>
-</div>
 
-
-<div><br /><br />
     <div class="container">
         <div class="row">
-            <div class="col-sm"></div>
-            <div class="col-sm">
-                <div [id]="position3"><img src={{N}} [position]='position3' /></div>
+            <div class="col-md"></div>
+            <div class="col-md" style="text-align: center;"><input #typeInput (keyup)="onKey($event)" class="inputtype"
+                    placeholder="Type on me..">
             </div>
-            <div class="col-sm"></div>
-            <div class="col-sm">
-                <div [id]="position4"><img src={{K}} [position]='position4' /></div>
-            </div>
-            <div class="col-sm"></div>
-            <div class="col-sm">
-                <div [id]="position4"><img src={{S}} [position]='position4' /></div>
+            <div class="col-md"></div>
+        </div>
+        <h2 id="wrong" style="z-index:1;color:red;display:none;text-align:center;"><b><img [hidden]="!this.gamelost"
+                    class="congrats" src="../../assets/game2/facepalm.gif" alt="?">WRONG! <img [hidden]="!this.gamelost"
+                    class="congrats" src="../../assets/game2/facepalm.gif" alt="?"></b></h2>
+
+        <h2 id="again" style="z-index:1;color:red;display:none;text-align:center;"><b><img [hidden]="!this.gamelost"
+                    class="congrats" src="../../assets/game2/facepalm.gif" alt="?">TRY AGAIN! <img
+                    [hidden]="!this.gamelost" class="congrats" src="../../assets/game2/facepalm.gif" alt="?"></b></h2>
+        <h2 id="typemore" style="z-index:1;color:green;display:none;text-align:center;"><b>KEEP TYPING!</b></h2>
+
+        <h2 id="win" style="z-index:1;color:green;display:none;text-align:center;"><b><img [hidden]="!this.gamewon"
+                    class="congrats" src="../../assets/game2/congrats.gif" alt="?">You Win! <img
+                    [hidden]="!this.gamewon" class="congrats" src="../../assets/game2/congrats.gif" alt="?"></b></h2>
+    </div>
+
+
+    <div><br /><br />
+        <div class="container">
+            <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-sm">
+                    <div [id]="position3"><img src={{N}} [position]='position3' /></div>
+                </div>
+                <div class="col-sm"></div>
+                <div class="col-sm">
+                    <div [id]="position4"><img src={{K}} [position]='position4' /></div>
+                </div>
+                <div class="col-sm"></div>
+                <div class="col-sm">
+                    <div [id]="position4"><img src={{S}} [position]='position4' /></div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div><br/><br/></div>
+    <div><br /><br /></div>
 </div>

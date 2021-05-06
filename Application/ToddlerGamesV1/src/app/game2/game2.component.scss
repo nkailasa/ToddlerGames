@@ -1,8 +1,19 @@
 .inputtype{
     border-color:aqua;
 }
-#game{
-  background-image: url("/assets/game2/bg2.jpg");   
+
+.page{
+  position: fixed;
+  
+  display: flex-start;
+  align-items: center;
+  justify-content: center;
+  
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100%;
+  left: 0;
+  top: 0;
 }
 img{
     height: 100px;
@@ -34,7 +45,7 @@ img{
     padding: 20px;
     border: 1px solid #888;
     width: 50%;
-    zoom: 50%;
+    zoom: 100%;
   }
   
   /* The Close Button */
@@ -52,3 +63,7 @@ img{
     text-decoration: none;
     cursor: pointer;
   }
+  .congrats{
+    position: relative;
+    opacity: 70%;
+}

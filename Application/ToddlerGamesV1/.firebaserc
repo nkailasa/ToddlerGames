@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "toddler-games-v1": {
+      "hosting": {
+        "ToddlerGamesV1": [
+          "toddler-games-v1"
+        ]
+      }
+    }
+  }
+}

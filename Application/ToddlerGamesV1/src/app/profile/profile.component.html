@@ -1,4 +1,10 @@
 <div class="container">
+    <a routerLink="/app-homepage">
+        <button mdbBtn type="button" style="float: left; margin-top: 3%; margin-left: 2%;" color="primary"
+            [outline]='true' mdbWavesEffect>
+            < BACK </button>
+    </a>
+    
     <div class="row my-2">
         <div class="col-lg-8 order-lg-2">
             <ul class="nav nav-tabs">
@@ -23,9 +29,11 @@
                     <div class="row">
                         <div class="col-md-6">
                             <h6>About</h6>
-                            <strong>Username</strong>: Guest2301
+                            <strong>Username</strong>: {{this.username | titlecase}} <br>
+                            <strong>Email</strong>: {{this.email | lowercase}}
                             <h6>Account: Free Version</h6>
                             <button>Upgrade version</button>
+                            
                         </div>
                         <div class="col-md-6">
                             <h6>Recent badges</h6>
@@ -74,10 +82,14 @@
         <div class="col-lg-4 order-lg-1 text-center">
             <img src="//placehold.it/150" class="mx-auto img-fluid img-circle d-block" alt="avatar">
             <h6 class="mt-2">Upload a different photo</h6>
-            <label class="custom-file">
+            <label class="custom-file" >
                 <input type="file" id="file" class="custom-file-input">
-                <span class="custom-file-control">Choose file</span>
+                <span mdbBtn class="custom-file-control" >Choose file</span>
             </label>
+            <br><br>
+            <button mdbBtn type="button" (click)="signOut()" [hidden]='!this.loggedin' color="primary" [outline]='true' mdbWavesEffect>< Sign out </button>
+            <button mdbBtn type="button" (click)="signOut()" [hidden]='this.loggedin' color="primary" [outline]='true' mdbWavesEffect> Sign in </button>
+
         </div>
     </div>
 </div>

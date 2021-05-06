@@ -9,6 +9,12 @@ import { LocalStorageService } from '../local-storage.service';
 export class HomepageComponent implements OnInit {
   public username:string="Guest2031";
   constructor(private localStorage: LocalStorageService) {
+    
+    var user = JSON.parse(this.localStorage.get("loggedInUser"))
+    if(user != null){
+      this.username = user['values'][1]
+    }
+    
   }
 
   public outlineEnable:boolean =true;

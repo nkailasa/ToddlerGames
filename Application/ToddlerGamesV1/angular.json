@@ -63,7 +63,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "3mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -135,6 +135,10 @@
               "devServerTarget": "ToddlerGamesV1:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }

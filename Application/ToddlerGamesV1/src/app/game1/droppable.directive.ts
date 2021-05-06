@@ -10,8 +10,11 @@ export class DroppableDirective {
   private svgPoint: any;
   private mouseDownPoint_x: any;
   private mouseDownPoint_y: any;
+  gamewon: boolean;
 
   constructor(private svgService: SVGService) {
+         this.gamewon = false;
+
   }
 
   @HostListener('drop', ['$event'])
@@ -277,6 +280,8 @@ export class DroppableDirective {
       }
       if (this.score == 100) {
         document.getElementById("win")!.style.display = "";
+              this.gamewon = true;
+
       }
 
     } else {

@@ -13,8 +13,9 @@ import { LocalStorageService } from '../local-storage.service';
 export class Game1Component implements OnInit {
   title = 'Drag & Drop Shapes';
   lvl:string = "1";
+
   constructor(private localStorage: LocalStorageService, private svgService: SVGService) {
-   
+
   }
 
   ngOnInit(): void {
