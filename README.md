@@ -5,19 +5,18 @@
 <br/>  Type and pop
 <br/>  Stack the bricks
 <br/><h4>Youtube link : https://youtu.be/F_6t2bFs3TI</h4>
-
 <br/>All three games are focused on developing fine motor skills and concentration in toddlers as well as keeping them entertained. We plan on making a website that runs on Angular. We followed the Agile development process model. We worked parallelly on different modules and integrated every sprint. We had 5 sprints in a total of which 3 of them were focused on the development of the product. We created storyboards in taiga to keep track of the user stories.
 <br/>
 <br/>This process helps us to split the big epics into user stories and the stories into smaller tasks. The smaller the tasks, the easier it is to develop and debug the issues. We also reused components that are developed by another team member to save time and to follow a uniform design. We made sure we had a running version of the product by the end of each sprint. This helped us to conduct usability studies and find the potential issues that might arise if we continue with the current product. Based on the feedback from the subjects, new user stories are added to the backlog which was taken into consideration based on priority in the next sprint.
 <br/>
 <br/><h4>Key Requirements:</h4>
-<br/>  The website should have 3 working games.
+The website should have 3 working games.
 <br/>  There must be a login page.
 <br/>  There has to be a homepage Menu to choose the games from.
 <br/>  This is a web application. So a website of the running game application is one of the deliverables. We followed the Scrum model so documentation of meeting minutes and Project reports are part of every deliverable.
 <br/>
 <br/><h4>Implemented Features:</h4>
-<br/>The following are the features of Toddler Games:
+The following are the features of Toddler Games:
 <br/>  Login- Users can login using a username and password if they already have an account.
 <br/>  Register - Users can register themselves to make an account.
 <br/>  View stats - logged in users can view stats for all 3 games
@@ -27,7 +26,6 @@
 <br/>  And a back button to go back to the Homepage
 <br/>  Profile button - There is also a profile button that will show the profile of the logged-in user.
 <br/>  Upload pictures - Users can upload a picture for their profile on the profile page.
-<br/>
 <br/>
 <br/><h4>User Manual:</h4>
 <br/>To set up the project follow the below steps.
@@ -43,7 +41,6 @@
 <br/>npm install -g @angular/cli
 <br/>Download zip from Git: https://github.com/rnmehta1/ToddlerGames
 <br/>Unzip the files, open the command prompt where you have extracted the files.
-<br/>
 <br/>
 <br/>In the command prompt use the following command to open the Visual Studio IDE:
 <br/>code.
@@ -65,9 +62,6 @@
 <br/>
 <br/>And you can later access the application at  http://localhost:4200/ in a browser.
 <br/>
-<br/>
-<br/>
-<br/>
 <br/>Project Deployment
 <br/>Firebase deployment
 <br/>Install Firebase package using the following command in CLI
@@ -78,14 +72,9 @@
 <br/>ng deploy
 <br/>(It will ask you to create an account on Firebase or you can use the existing account and later can create a new project on Firebase to use it for Angular project deployment)
 <br/>
-<br/>
-<br/>Outlook
+<br/><h4>Outlook:</h4>
 <br/>The team has a vision for this application. Here are some features we would like to see implemented.
 <br/>Set Up a backend for the game.
 <br/>Develop more games for the App
 <br/>Develop more levels for the existing games.
 <br/>Have a way to add friends so that you can compare scores.
-<br/>
-<br/>
-
-<br/>
