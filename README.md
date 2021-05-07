@@ -14,8 +14,7 @@
 <br/>  The website should have 3 working games.
 <br/>  There must be a login page.
 <br/>  There has to be a homepage Menu to choose the games from.
-<br/>  Deliverables (CO-5, CO-6):
-<br/>  Toddler Ria is a web game. So a website of the running game application is one of the deliverables. We followed the Scrum model so documentation of meeting minutes and Project reports are part of every deliverable.
+<br/>  This is a web application. So a website of the running game application is one of the deliverables. We followed the Scrum model so documentation of meeting minutes and Project reports are part of every deliverable.
 <br/>
 <br/><h4>Implemented Features:</h4>
 <br/>The following are the features of Toddler Games:
@@ -79,11 +78,6 @@
 <br/>ng deploy
 <br/>(It will ask you to create an account on Firebase or you can use the existing account and later can create a new project on Firebase to use it for Angular project deployment)
 <br/>
-<br/>
-<br/>Possible Solution:
-<br/>For screen compatibility icons, png, and gif sizes are needed to be proportionally resized with respect to the screen.
-<br/>FireBase project specifications or different web-app deployment platforms which will support gifs.
-<br/>Storing stats to the database.
 <br/>
 <br/>Outlook
 <br/>The team has a vision for this application. Here are some features we would like to see implemented.
